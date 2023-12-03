@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shanti/router/router.dart';
 
 class ShantiApp extends StatelessWidget {
   const ShantiApp({super.key});
@@ -6,7 +7,8 @@ class ShantiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Shanti',
+      routes: routes,
     );
   }
 }
