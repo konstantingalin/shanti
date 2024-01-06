@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shanti/features/create_account/view/create_account.dart';
-import 'package:shanti/features/forgot_password/view/forgot_password.dart';
 import 'package:shanti/features/home/view/home_page.dart';
+import 'package:shanti/features/login/view/view.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class CreateAccountPage extends StatelessWidget {
+  const CreateAccountPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +55,7 @@ class LoginPage extends StatelessWidget {
                     Column(
                       children: [
                         const Text(
-                          'Welcome',
+                          'Create new account',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Color(0xFF424242),
@@ -135,37 +134,43 @@ class LoginPage extends StatelessWidget {
                           ),
                           autofocus: false,
                         ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    const ForgotPasswordPage(),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Repeat the password',
+                            hintStyle: const TextStyle(
+                              color: Color(0xFF8D8D8D),
+                            ),
+                            contentPadding: const EdgeInsets.symmetric(
+                                vertical: 14.0, horizontal: 16.0),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              borderSide: const BorderSide(
+                                color: Color(0xFFDBDBDB),
+                                width: 1.0,
                               ),
-                            );
-                          },
-                          child: const Column(
-                            children: [
-                              SizedBox(
-                                height: 12,
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              borderSide: const BorderSide(
+                                color: Color(0xFFDBDBDB),
+                                width: 1.0,
                               ),
-                              Text(
-                                'Forgot your password?',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 109, 136),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  decoration: TextDecoration.underline,
-                                  decorationColor:
-                                      Color.fromARGB(255, 255, 109, 136),
-                                ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              borderSide: const BorderSide(
+                                color: Color.fromARGB(255, 255, 109, 136),
+                                width: 1.0,
                               ),
-                              SizedBox(
-                                height: 24,
-                              ),
-                            ],
+                            ),
                           ),
+                          autofocus: false,
+                        ),
+                        const SizedBox(
+                          height: 10,
                         ),
                         ElevatedButton(
                           onPressed: () {
@@ -184,7 +189,7 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                           child: const Text(
-                            'Login',
+                            'Create new account',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500),
@@ -198,15 +203,14 @@ class LoginPage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      const CreateAccountPage()),
+                                  builder: (context) => const LoginPage()),
                             );
                           },
                           child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "Don't have an account? ",
+                                "Do you have an account? ",
                                 style: TextStyle(
                                   color: Color(0xFF424242),
                                   fontSize: 12,
@@ -215,7 +219,7 @@ class LoginPage extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                'Create new account',
+                                'Login',
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 255, 109, 136),
                                   fontSize: 12,
