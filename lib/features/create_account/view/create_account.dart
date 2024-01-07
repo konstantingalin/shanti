@@ -236,11 +236,7 @@ class CreateAccountPage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const HomePageScreen()),
-                        );
+                        Navigator.of(context).pushNamed('/home');
                       },
                       child: Column(
                         children: [
